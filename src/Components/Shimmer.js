@@ -1,5 +1,4 @@
 import { shimmer_card_unit } from "../../public/Common/constants";
-
 const CardShimmer = () => {
   return (
     <>
