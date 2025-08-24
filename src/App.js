@@ -12,39 +12,8 @@ import Error from "./Components/Error";
 import Contact from "./Components/Contact";
 import Login from "./Components/Login";
 import RestaurantMenu from "./Components/RestaurantMenu";
-// import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; // for routing our page import createBrowserRouter and RouterProvider for providing router & Outlet for children component for nested routing
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-
-/* My Food App structure will look like this, 
-            1) Header
-                - Logo
-                - Nav Items(right side)
-                - Cart
-            2) Body
-                - Search bar
-                - Restaurants List
-                    - Restaurant card
-                        - Image
-                        - Name
-                        - Rating
-            3) Footer
-                - Links
-                - Copyrights
-       
-*/
-
-// Title component for display logo
-// const Title = () => (
-//   <a href="/">
-//     <img className="logo" src={foodFireLogo} alt="Food Fire Logo" />
-//     <img
-//       className="logo"
-//       src="/Users/deeksha.rawat/Desktop/sw/public/Images/foodFireLogo.png"
-//       alt="Food Fire Logo"
-//     />
-//   </a>
-// );
 
 // Restaurant card component: Image, name, cuisine
 

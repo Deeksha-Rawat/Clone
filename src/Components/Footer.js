@@ -4,13 +4,13 @@ const Footer = () => {
     <div className="footer">
       Created By
       <i className="fa-solid fa-heart"></i>
-      <a href="https://www.linkedin.com/in/chetannada/" target="_blank">
+      <a href="https://myportfolio-9.netlify.app/" target="_blank">
         Deeksha
       </a>
       <i className="fa-solid fa-copyright"></i>
       {year}
       <strong>
-        Food<span>Fire</span>
+        Order<span>it</span>
       </strong>
     </div>
   );
