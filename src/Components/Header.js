@@ -8,7 +8,7 @@ const Title = () => (
   <a href="/">
     <img
       className="logo"
-      src="https:user-gen-media-assets.s3.amazonaws.com/gpt4o_images/74b2a594-2157-49c4-a725-7f2b6edfba4d.png"
+      src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/74b2a594-2157-49c4-a725-7f2b6edfba4d.png"
       alt="Food Fire Logo"
       title="Food Fire Logo"
     />
