@@ -628,7 +628,7 @@ a {
 /* Error page CSS Start */
 .error-page {
     text-align: center;
-    background-color: var(--body-bg-color);
+    background-color: #ffc92a;
     height: 100vh;
     width: auto;
 }
@@ -1451,4 +1451,35 @@ a {
     .profile-repo .profile-repo-items h3 a {
         font-size: small;
     }
+}
+
+/* custom */
+
+
+.errorimg {
+    width: 83%;
+    height: auto;
+    object-fit: scale-down;
+    margin: 0 auto;
+}
+
+@media (max-width:769px) {
+    .errorimg.mob {
+        display: block !important;
+        width: 100%;
+        object-fit: contain;
+        height: 100%;
+    }
+
+    .errorimg.web {
+        display: none !important;
+    }
+}
+
+.errorimg.mob {
+    display: none;
+}
+
+.errorimg.web {
+    display: block;
 }
