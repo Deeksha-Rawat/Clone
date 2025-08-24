@@ -7,11 +7,14 @@ import Header from "./Components/Header";
 import Body from "./Components/Body";
 import Footer from "./Components/Footer";
 import About from "./Components/About";
-// import Error from "./Components/Error";
-// import Contact from "./Components/Contact";
-// import Login from "./Components/Login";
-// import RestaurantMenu from "./Components/RestaurantMenu";
+import Error from "./Components/Error";
+import Error from "./Components/Error";
+import Contact from "./Components/Contact";
+import Login from "./Components/Login";
+import RestaurantMenu from "./Components/RestaurantMenu";
 // import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; // for routing our page import createBrowserRouter and RouterProvider for providing router & Outlet for children component for nested routing
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 /* My Food App structure will look like this, 
             1) Header
@@ -56,6 +59,29 @@ const AppLayout = () => {
   );
 };
 
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
+  {
+    path: "/restaurant/:resId",
+    element: <RestaurantMenu />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+]);
 // const appRouter = createBrowserRouter([
 // {
 //   path: "/", // show path for routing
@@ -87,4 +113,4 @@ const AppLayout = () => {
 // },
 // ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />); // render RouterProvider and use router as props and pass value appRouter
+root.render(<RouterProvider router={appRouter} />); // render RouterProvider and use router as props and pass value appRouter
