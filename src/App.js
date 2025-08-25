@@ -12,7 +12,12 @@ import Contact from "./Components/Contact";
 import Login from "./Components/Login";
 import RestaurantMenu from "./Components/RestaurantMenu";
 
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import {
+  createHashRouter,
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+} from "react-router-dom";
 
 // Restaurant card component: Image, name, cuisine
 
@@ -27,7 +32,7 @@ const AppLayout = () => {
   );
 };
 
-const appRouter = createBrowserRouter([
+const appRouter = createHashRouter([
   {
     path: "/",
     element: <AppLayout />,
