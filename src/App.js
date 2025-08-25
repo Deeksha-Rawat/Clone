@@ -8,7 +8,6 @@ import Body from "./Components/Body";
 import Footer from "./Components/Footer";
 import About from "./Components/About";
 import Error from "./Components/Error";
-import Error from "./Components/Error";
 import Contact from "./Components/Contact";
 import Login from "./Components/Login";
 import RestaurantMenu from "./Components/RestaurantMenu";

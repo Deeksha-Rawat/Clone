@@ -1,4 +1,3 @@
-import Header from "./Header";
 const About = () => {
   return (
     <>
@@ -10,7 +9,7 @@ const About = () => {
             <span>Tasty & Fresh Food</span>
           </h1>
           <h4>
-            "Better you will feel if you eat a Food<span>Fire</span> healthy
+            "Better you will feel if you eat a Order<span>it</span> healthy
             meal"
           </h4>
         </div>
