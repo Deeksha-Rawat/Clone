@@ -1,5 +1,5 @@
-import { Outlet } from "react-router";
-
+import { Outlet } from "react-router-dom";
+import Profile from "./ProfileClass";
 const About = () => {
   return (
     <>
@@ -14,7 +14,7 @@ const About = () => {
             "Better you will feel if you eat a Order<span>it</span> healthy
             meal"
           </h4>
-          <Outlet />
+          <Profile />
         </div>
         <div className="about-right">
           {/* <img src="" alt="Food Image" /> */}

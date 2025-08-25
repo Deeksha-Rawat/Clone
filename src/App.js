@@ -44,14 +44,14 @@ const appRouter = createHashRouter([
         element: <Body />,
       },
       {
-        path: "/about",
+        path: "about",
         element: <About />,
-        children:[
+        children: [
           {
-            path:"profile",
-            element:<Profile/>
-          }
-        ]
+            path: "profile",
+            element: <Profile />,
+          },
+        ],
       },
       {
         path: "/contact",
