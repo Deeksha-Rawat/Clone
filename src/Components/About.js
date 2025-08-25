@@ -1,3 +1,5 @@
+import { Outlet } from "react-router";
+
 const About = () => {
   return (
     <>
@@ -12,6 +14,7 @@ const About = () => {
             "Better you will feel if you eat a Order<span>it</span> healthy
             meal"
           </h4>
+          <Outlet />
         </div>
         <div className="about-right">
           {/* <img src="" alt="Food Image" /> */}
