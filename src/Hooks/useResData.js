@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useResData = (FOODFIRE_API_URL) => {
+const useResData = (API_URL) => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
@@ -13,7 +13,7 @@ const useResData = (FOODFIRE_API_URL) => {
   async function getRestaurants() {
     // handle the error using try... catch
     try {
-      const response = await fetch(FOODFIRE_API_URL);
+      const response = await fetch(API_URL);
       // if response is not ok then throw new Error
       if (!response.ok) {
         const err = response.status;

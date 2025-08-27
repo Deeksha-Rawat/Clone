@@ -7,19 +7,17 @@ const Error = () => {
     <div className="error-page">
       <img
         className="errorimg web"
-        src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/513dfe74-c8f9-4120-8381-58e375454304.png?utm_source=perplexity"
+        src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/276a800e-cfbb-4297-9cad-49ca7ee1e1c7.png"
         alt="Error Image"
       />
       <img
         className="errorimg mob"
-        src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/39c62546-c405-45cb-9930-470493961df8.png"
+        src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/7f6c6761-05c0-4fb9-9896-148aa7112684.png"
         alt="error image"
       />
-      {/* <h1>Oops! The restaurant you're looking for can't be found.</h1>
-      <h3 className="error-data">Error: No route matches URL "/error"</h3>
       <h3 className="error-back-home">
-        <a href="/">Back Home</a>
-      </h3> */}
+        <Link to="/">Back Home</Link>
+      </h3>
     </div>
   );
 };

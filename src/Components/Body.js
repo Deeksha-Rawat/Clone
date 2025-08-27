@@ -1,14 +1,12 @@
 import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer"; /* This is default export */
-import { FOODFIRE_API_URL } from "../../public/Common/constants.js";
+import { useState } from "react";
+import Shimmer from "./Shimmer";
+import { FOODFIRE_API_URL } from "../../public/Common/constants";
 import { Link } from "react-router-dom";
-import { filterData } from "../Utils/Helper.js";
-import useResData from "../Hooks/useResData.js";
-import useOnline from "../Hooks/useOnline.js";
+import { filterData } from "../Utils/Helper";
+import useResData from "../Hooks/useResData"; // imported custom hook useResData which gives All Restaurant and  Filtered Restaurant data from swigy api
+import useOnline from "../Hooks/useOnline"; // imported custom hook useOnline which checks user is online or not
 import UserOffline from "./UserOffline";
-
-// Filter the restaurant data according input type
 
 // Body Component for body section: It contain all restaurant cards
 const Body = () => {

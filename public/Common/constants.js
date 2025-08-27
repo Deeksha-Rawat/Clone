@@ -4,10 +4,10 @@ export const IMG_CDN_URL = `https://media-assets.swiggy.com/swiggy/image/upload/
 // Image CDN URL for Restaurant Menu
 export const ITEM_IMG_CDN_URL = `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/`;
 
-// Swiggy API to get Restaurant data using foodfire server
+// Swiggy API to get Restaurant data usingorderitserver
 export const FOODFIRE_API_URL = `https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING`;
 
-// Swiggy API to get Restaurant Menu data using foodfire server
+// Swiggy API to get Restaurant Menu data usingorderitserver
 export const FOODFIRE_MENU_API_URL = `https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=`;
 
 // shimmer card unit
@@ -17,17 +17,15 @@ export const shimmer_card_unit = 20;
 export const shimmer_menu_card_unit = 10;
 
 // Github - username
-export const Github_UserName = "ChetanNada";
-export const Github_Repository_Name = "Namaste-React";
+export const Github_UserName = "Deeksha-Rawat";
 
 // Github API for User
 export const Github_API_User = "https://api.github.com/users/";
 
 // Social Media Links
-export const Linkedin_Link = "https://www.linkedin.com/in/chetannada/";
-export const Twitter_Link = "https://twitter.com/ChetanNada";
-export const Github_Link = "https://github.com/chetannada";
-export const Email_Link = "mailto:call2chetannada@gmail.com";
+export const Linkedin_Link =
+  "https://www.linkedin.com/in/deeksha-rawat-555719186/";
+export const Email_Link = "mailto:deeksha9557@gmail.com";
 
 // Github Authorization Token
 export const options = {

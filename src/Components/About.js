@@ -1,26 +1,54 @@
-import { Outlet } from "react-router-dom";
-import Profile from "./ProfileClass";
+import { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
+
 const About = () => {
+  const [show, setShow] = useState(false);
   return (
-    <>
+    <div className="about-container-main">
+      <div className="about-profile-container">
+        {/* used ternary condition to Show my profile and Hide my Profile and using nested routing */}
+        {show ? (
+          <>
+            <Link to={"/about"}>
+              <button
+                className="about-profile-button"
+                onClick={() => setShow(false)}
+              >
+                Hide My Profile
+              </button>
+            </Link>
+            <Outlet />
+          </>
+        ) : (
+          <Link to={"profile"}>
+            <button
+              className="about-profile-button"
+              onClick={() => setShow(true)}
+            >
+              Show My Profile
+            </button>
+          </Link>
+        )}
+      </div>
       <div className="about-container">
-        <br></br>
         <div className="about-left">
           <h1>
-            Welcome to <br /> The world of <br />{" "}
+            Welcome to <br /> The world of <br />
             <span>Tasty & Fresh Food</span>
           </h1>
           <h4>
-            "Better you will feel if you eat a Order<span>it</span> healthy
+            "Better you will feel if you eat a Order<span>It</span> healthy
             meal"
           </h4>
-          <Profile />
         </div>
         <div className="about-right">
-          {/* <img src="" alt="Food Image" /> */}
+          <img
+            src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/2e39410a-5f85-4651-988f-c925ad53bfe0.png"
+            alt="Food Image"
+          />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

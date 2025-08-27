@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { MenuShimmer } from "./Shimmer";
+import { useParams } from "react-router-dom"; // import useParams for read `resId`
 import {
   FOODFIRE_MENU_API_URL,
   IMG_CDN_URL,
@@ -8,16 +6,26 @@ import {
   MENU_ITEM_TYPE_KEY,
   RESTAURANT_TYPE_KEY,
 } from "../../public/Common/constants";
-import useResMenuData from "../Hooks/useResMenuData";
+import { MenuShimmer } from "./Shimmer";
+import useResMenuData from "../Hooks/useResMenuData"; // imported custom hook useResMenuData which gives restaurant Menu data from swigy api
+import useOnline from "../Hooks/useOnline"; // imported custom hook useOnline which checks user is online or not
+import UserOffline from "./UserOffline";
 
 const RestaurantMenu = () => {
-  const { resId } = useParams();
+  const { resId } = useParams(); // call useParams and get value of restaurant id using object destructuring
   const [restaurant, menuItems] = useResMenuData(
     FOODFIRE_MENU_API_URL,
     resId,
     RESTAURANT_TYPE_KEY,
     MENU_ITEM_TYPE_KEY
   );
+
+  const isOnline = useOnline();
+
+  // if user is not Online then return UserOffline component
+  if (!isOnline) {
+    return <UserOffline />;
+  }
 
   return !restaurant ? (
     <MenuShimmer />
@@ -83,7 +91,6 @@ const RestaurantMenu = () => {
                       alt={item?.name}
                     />
                   )}
-                  <button className="add-btn"> ADD +</button>
                 </div>
               </div>
             ))}

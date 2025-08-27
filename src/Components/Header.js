@@ -1,29 +1,27 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import useOnline from "../Hooks/useOnline";
 
-import { Link } from "react-router-dom"; //imported Link for client side routing
-import { useNavigate } from "react-router-dom";
-
-//  Title component for display logo
+// Title component for display logo
 const Title = () => (
-  <a href="/">
+  <Link to="/">
     <img
       className="logo"
-      src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/74b2a594-2157-49c4-a725-7f2b6edfba4d.png"
-      alt="Food Fire Logo"
-      title="Food Fire Logo"
+      src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/f9603bfa-6070-43b1-a432-e307cc3d1161.png"
+      alt="orderit"
+      title="orderit"
     />
-  </a>
+  </Link>
 );
 
-//  Header component for header section: Logo, Nav Items
+// Header component for header section: Logo, Nav Items
 const Header = () => {
-  // use useState for user logged in or logged out
-  const [isLoggedin, setIsLoggedin] = useState(true);
-  const navigate = useNavigate();
+  // call custom hook useOnline if user is online or not
+  const isOnline = useOnline();
 
   return (
     <div className="header">
       <Title />
+
       <div className="nav-items">
         <ul>
           <li>
@@ -32,30 +30,14 @@ const Header = () => {
           <li>
             <Link to="/about">About</Link>
           </li>
+
           <li>
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="/instamart">Instamart</Link>
-          </li>
-          <li>
             <i className="fa-solid fa-cart-shopping"></i>
           </li>
-          <li>
-            {/* use conditional rendering for login and logout */}
-            {isLoggedin ? (
-              <button
-                className="logout-btn"
-                onClick={() => setIsLoggedin(false)}
-              >
-                Logout
-              </button>
-            ) : (
-              <button className="login-btn" onClick={() => navigate("/login")}>
-                Login
-              </button>
-            )}
-          </li>
+          <li></li>
         </ul>
       </div>
     </div>

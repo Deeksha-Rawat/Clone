@@ -628,9 +628,9 @@ a {
 /* Error page CSS Start */
 .error-page {
     text-align: center;
-    background-color: #ffc92a;
-    height: 100vh;
+    background: #f4570a;
     width: auto;
+    height: 100vh;
 }
 
 .error-page .error-data {
@@ -1459,8 +1459,8 @@ a {
 
 
 .errorimg {
-    width: 83%;
-    height: auto;
+    width: 100%;
+
     object-fit: scale-down;
     margin: 0 auto;
 }
@@ -1470,11 +1470,15 @@ a {
         display: block !important;
         width: 100%;
         object-fit: contain;
-        height: 100%;
+
     }
 
     .errorimg.web {
         display: none !important;
+    }
+
+    .error-page {
+        background: #ffc92a;
     }
 }
 

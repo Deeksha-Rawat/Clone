@@ -1,50 +1,64 @@
 import { Component } from "react";
+import ProfileUserClass from "./ProfileUserClass";
 import {
   Github_API_User,
   Github_UserName,
   options,
 } from "../../public/Common/constants";
 
+// Profileclass is class component
 class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInfo: {
-        name: "dummy",
-        bio: "location",
-      },
+      userInfo: null,
+      repoInfo: null,
     };
-    console.log("constructor");
+    // console.log("Profile-Parent constructor");
   }
 
   async componentDidMount() {
-    const response = await fetch(Github_API_User + Github_UserName, options);
-    const json = await response.json();
-    // create state
-    this.setState({
-      userInfo: json,
-    });
+    try {
+      const response = await Promise.all([
+        fetch(Github_API_User + Github_UserName, options), // Fetch the data from github User API
+        fetch(Github_API_User + Github_UserName + "/repos", options), // Fetch the data from github User API for Repository
+      ]); // handle Multiple API Requests usign Promise.all()
 
-    // api calls
+      const resData = await Promise.all(response.map((r) => r.json()));
 
-    console.log("component did mount", json, this.state.userInfo);
+      this.setState({
+        userInfo: resData[0],
+        repoInfo: resData[1],
+      });
+    } catch (error) {
+      console.error(error); // show error in console
+    }
+
+    // console.log("Profile-Parent componentDidMount");
+  }
+
+  componentDidUpdate() {
+    // console.log("Profile-Parent componentDidUpdate");
+  }
+
+  componentWillUnmount() {
+    // console.log("Profile-Parent componentWillUnmount");
   }
   render() {
-    console.log("render");
+    const { userInfo, repoInfo } = this.state; // object destructuring for state data
+    // console.log("Profile-Parent - render");
+
     return (
       <>
-        <h1>HI this is component</h1>
-        <p>count:{this.state.userInfo.name}</p>
-        <p>count:{this.state.bio}</p>
-        <button
-          onClick={() => {
-            this.setState({
-              count: this.state.count + 1,
-            });
-          }}
-        >
-          click
-        </button>
+        {userInfo && repoInfo ? (
+          <div className="profile-class-container">
+            <div className="profile-container">
+              <h1 className="profile-title">About Me</h1>
+              <ProfileUserClass userInfo={userInfo} />
+              {/* Passing props data (full json data) from parent to child */}
+            </div>
+          </div>
+        ) : null}
       </>
     );
   }
