@@ -1,7 +1,7 @@
 // ## Namaste React Course by Akshay Saini
 // Chapter 04 - Talk is Cheap, show me the code
 
-import React from "react";
+import React, { lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -21,6 +21,10 @@ import {
 } from "react-router-dom";
 
 // Restaurant card component: Image, name, cuisine
+
+const Instamart = lazy(() => {
+  import("./Components/Instamart");
+});
 
 // AppLayout component to show: Header, Body, Footer
 const AppLayout = () => {
@@ -56,6 +60,10 @@ const appRouter = createHashRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/instamart",
+        element: <Instamart />,
       },
       {
         path: "/restaurant/:resId",

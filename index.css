@@ -1090,6 +1090,8 @@ a {
     background-color: var(--footer-bg-color);
     padding: 15px 10px 15px;
     box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.71);
+    gap: 2px;
+    align-items: baseline;
 }
 
 .footer>i {
